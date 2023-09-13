@@ -1,0 +1,244 @@
+:root {
+    /* Primary */
+    --clr-Desaturated-Red: hsl(0, 36%, 70%);
+    --clr-Soft-Red: hsl(0, 93%, 68%);
+    /* Neutral */
+    --clr-Dark-Grayish-Red: hsl(0, 6%, 24%);
+    /* Gradients */
+    --gradient-color-white: linear-gradient(135deg, #fff 0%, #fff5f5 100%);
+    --gradient-color-red: linear-gradient(135deg, #f8bfbf 0%, #ee8c8c 100%);
+    /* linear 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%) ; Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%) */
+    /*Font Weight*/
+    --fw-thin: 300;
+    --fw-regular: 400;
+    --fw-bold: 600;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* img {
+    width: 100%;
+} */
+/* .logo-image {
+  margin-block: 2rem;
+  margin-left: 6.4rem;
+  max-width: 7rem;
+} */
+.header {
+    padding: 1.5rem 0 0 1.5rem;
+}
+
+.logo {
+    display: none;
+}
+
+body {
+    font: 16px 'Josefin Sans', sans-serif;
+    color: var(--clr-Desaturated-Red);
+}
+
+main {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* margin-inline: 10rem; */
+}
+
+.second-part {
+    position: relative;
+
+}
+
+picture>img {
+    max-width: 100%;
+    margin-top: 2rem;
+}
+
+.first-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.text-section {
+    text-align: center;
+    padding: 0 1.5rem 2rem;
+}
+
+h1 {
+    font-weight: var(--fw-thin);
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    padding-inline: 3.5rem;
+    font-size: 2.5rem;
+    line-height: 1.1;
+    letter-spacing: 0.7rem;
+}
+
+span {
+    text-transform: uppercase;
+    color: black;
+    font-weight: var(--fw-bold);
+}
+
+.text {
+    font-weight: var(--fw-regular);
+    line-height: 1.7;
+    text-align: center;
+    font-size: 15px;
+    padding-inline: 4.2rem;
+}
+
+form {
+    position: relative;
+    width: 65%;
+}
+
+.form-box {
+    position: relative;
+}
+
+.email-box {
+    font-size: 0.8rem;
+    width: 100%;
+    border-radius: 30px;
+    padding: 0.8rem 1rem;
+    border: solid 1px var(--clr-Soft-Red);
+    margin: 1rem 0 0;
+}
+
+.email-box::placeholder {
+    color: var(--clr-Desaturated-Red);
+}
+
+.email-box .validated {
+    border: 2px solid var(--clr-Soft-Red);
+}
+
+.error-circle {
+    background: url(./images/icon-error.svg) center / 45% no-repeat;
+    display: none;
+    position: absolute;
+    width: 50px;
+    inset: 10px 250px -5px 200px;
+    left: 220px;
+}
+
+.error-circle .validated {
+    display: block;
+}
+
+form button {
+    position: absolute;
+    width: 60px;
+    height: 44px;
+    top: 67%;
+    right: -0.1rem;
+    transform: translateY(-55%);
+    border-radius: 30px;
+    border: none;
+    background: url(./images/icon-arrow.svg) center / 20% no-repeat,
+        var(--gradient-color-red);
+    cursor: pointer;
+    padding: 0.8rem 2rem;
+    transition: 0.3s;
+}
+
+form button:hover {
+    opacity: 0.9;
+    box-shadow: 0 5px 10px #00000060;
+}
+
+.error {
+    color: var(--clr-Soft-Red);
+    text-align: left;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+@media all and (width >= 64rem) {
+    body {
+        background-image: url(./images/bg-pattern-desktop.svg);
+    }
+
+    main {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .logo {
+        display: block;
+        margin-top: 0;
+        position: relative;
+        top: -8rem;
+        left: -8.5rem;
+    }
+
+    .first-part {
+        width: 50%;
+        height: 100%;
+    }
+
+    .second-part {
+        width: 44%;
+        height: 100%;
+    }
+
+    picture>img {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 3.8rem;
+        width: 500px;
+        text-align: left;
+        margin-top: 0;
+    }
+
+    .text {
+        width: 550px;
+        text-align: left;
+        padding-left: 64px;
+    }
+
+    form input {
+        width: 430px;
+    }
+
+    .form-box {
+        position: relative;
+    }
+
+    .error-circle {
+        position: absolute;
+        left: 355px;
+        right: 200px;
+    }
+
+    form label {
+        right: 340px;
+    }
+
+    form button {
+        right: 1px;
+    }
+}
